@@ -189,12 +189,15 @@ public class SolutionTest {
                  {"src/main/java/files/pipe.txt", "\\|"},
                  {"src/main/java/files/space.txt", "\\s+"}
          };
+        int i = 0;
          FileController _controller = new FileController();
          for (String[] strings : source) {
              Person[] person = _controller.parseFile(strings[0], strings[1]);
              Collections.addAll(_people, person);
+             i++;
          }
          _people.stream().sorted(comparing(Person::getLastName).reversed()).forEachOrdered(person -> _sorted.add(person));
+           assertEquals(_sorted.get(i).toString(),testOutPutData3[i]);
          System.out.println("Output3:");
          _sorted.forEach(System.out::println);
          System.out.println();
