@@ -24,14 +24,15 @@ public class FileController implements FileOperations {
     }
     return _listOfPeople;
   }
-  List<String[]> readFile(String path, String delimiter) {
+  @Override
+  public List<String[]> readFile(String path, String delimiter) {
     BufferedReader bufferedReader = null;
     List<String[]> _data = new ArrayList<>();
     String lineToRead;
     try {
       bufferedReader = new BufferedReader(new FileReader(path));
       while ((lineToRead = bufferedReader.readLine()) != null) {
-        _data.add(lineToRead.trim().split(delimiter == "\\s+"? " " : delimiter, lineToRead.length() - 1));
+        _data.add(lineToRead.trim().split(Objects.equals(delimiter, "\\s+") ?" " : delimiter, lineToRead.length() - 1));
       }
     } catch (FileNotFoundException e) {
       System.out.println(e.getMessage());
@@ -49,6 +50,7 @@ public class FileController implements FileOperations {
     }
     return _data;
   }
+  @Override
   public Person createNewUser(String[] userData, String delimiter) {
     Person _newPerson = null;
     int i = 0;

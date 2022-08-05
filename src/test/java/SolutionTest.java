@@ -2,14 +2,11 @@ import controller.FileController;
 import model.Person;
 import org.junit.Test;
 import utils.SortComparator;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import static java.util.Comparator.comparing;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 
 public class SolutionTest {
 
@@ -62,6 +59,8 @@ public class SolutionTest {
              "Bishop Timothy Male 4/23/1967 Yellow",
              "Abercrombie Neil Male 2/13/1943 Tan"
      };
+
+
     @Test
     public void parseCommaFile() {
         List<Person> user = new ArrayList<>();
@@ -118,7 +117,7 @@ public class SolutionTest {
                 System.out.println(person1);
             }
             System.out.println();
-            assertEquals(user.get(i).toString(), spaceTestData[i]);
+            assertEquals(user.get(i).toString(), spaceTestData[i]  );
 
         }
     }
