@@ -1,9 +1,4 @@
-## DefMethod: Home assignment - java implementation
-
- #### My Approach 
-      One of the goals i had for this assignment was to make the parse function as robust as possible. 
-      
-      Internally the parse function will generate a new person object based on the delimiter and the file being read from.
+## DefMethod: Home assignment - command line application  
 
 
   ### Changelog ***
