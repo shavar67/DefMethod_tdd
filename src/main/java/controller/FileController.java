@@ -61,7 +61,7 @@ public class FileController implements FileOperations {
           _newPerson.setLastName(userData[0]);
           _newPerson.setFirstName(userData[1]);
           _newPerson.setSex(!("F".equals(userData[3])) ? "Male" : "Female");
-          _newPerson.setBirthDate(userData[4].replaceAll("-", "/"));
+          _newPerson.setBirthDate(userData[4].replaceAll("-","\\/"));
           _newPerson.setColor(userData[5]);
         }
         case "\\|" -> {

@@ -4,7 +4,7 @@ import controller.FileController;
 import model.Person;
 import utils.SortComparator;
 
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +13,7 @@ import static java.util.Comparator.comparing;
 
 public class Solution {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         printOutput1();
         printOutput2();
         printOutput3();
