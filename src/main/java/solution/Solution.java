@@ -9,9 +9,9 @@ import java.util.*;
 import static java.util.Comparator.comparing;
 public class Solution {
     public static void main(String[] args) throws IOException {
-           printOutPut1();
-          printOutPut2();
-          printOutPut3();
+        printOutPut1();
+        printOutPut2();
+        printOutPut3();
     }
 
 
@@ -33,11 +33,11 @@ public class Solution {
         _people.stream()
                 .filter(person -> person.getSex().trim().equalsIgnoreCase("Female"))
                 .sorted(comparing(Person::getLastName))
-                .forEachOrdered(p1 -> _sorted.add(p1));
+                .forEachOrdered(_sorted::add);
         _people.stream()
                 .filter(person -> person.getSex().trim().equalsIgnoreCase("Male"))
                 .sorted(comparing(Person::getLastName))
-                .forEachOrdered(p2 -> _sorted.add(p2));
+                .forEachOrdered(_sorted::add);
            _sorted.forEach(System.out::println);
         System.out.println();
     }
@@ -50,13 +50,12 @@ public class Solution {
                 {"src/main/java/files/space.txt", "\\s+"}
         };
         FileController _controller = new FileController();
-         for (int i = 0,sourceLength = source.length; i < sourceLength; i++) {
-             String[] strings = source[i];
+         for (String[] strings : source) {
              Person[] person = _controller.parseFile(strings[0], strings[1]);
              Collections.addAll(_people, person);
          }
          System.out.println("Output2:");
-        Collections.sort(_people,new SortComparator());
+        _people.sort(new SortComparator());
         _people.forEach(System.out::println);
          System.out.println();
      }
